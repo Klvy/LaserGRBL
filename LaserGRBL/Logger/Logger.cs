@@ -9,7 +9,7 @@ using System.Text;
 
 namespace LaserGRBL
 {
-	static class Logger
+	public static class Logger
 	{
 		private static AsyncLogFile file = new AsyncLogFile(System.IO.Path.Combine(GrblCore.DataPath, "sessionlog.txt"), 1000);
 
@@ -34,7 +34,7 @@ namespace LaserGRBL
             LogMultiLine("Program", String.Format("------- LaserGRBL v{0} [{1}{2}] START -------", current.ToString(3), p64 ? "64bit" : "32bit" , p64 != o64 ? "!" : ""));
         }
 		
-		internal static void Stop()
+		public static void Stop()
 		{
 			try
 			{
